@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "nextbox"
+version = "0.1.0"
+description = "A server sanbox bot written with nextcord."
+authors = ["vcokltfre <vcokltfre@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/vcokltfre/nextbox"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+nextcord = "^2.0.0-alpha.2"
+taskipy = "^1.8.1"
+loguru = "^0.5.3"
+
+[tool.poetry.dev-dependencies]
+
+[tool.taskipy.tasks]
+start = "python3 -m src"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
