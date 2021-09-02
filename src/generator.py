@@ -11,7 +11,9 @@ with open("nextbox.png", "rb") as f:
 async def generate_default(bot: Bot, ctx: Context) -> Tuple[Guild, TextChannel, Role]:
     guild = await bot.create_guild(name="NextBox Sandbox", code="q7RRmVrncqvv", icon=ICON)
 
-    print(guild.channels)
+    channels = await guild.fetch_channels()
+    for channel in channels:
+        await channel.delete()
 
     cat = await guild.create_category_channel(name="NextBox")
     role = await guild.create_role(name="Administrator", permissions=Permissions(administrator=True))
