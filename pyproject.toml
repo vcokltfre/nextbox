@@ -11,6 +11,7 @@ python = "^3.8"
 nextcord = "^2.0.0-alpha.2"
 taskipy = "^1.8.1"
 loguru = "^0.5.3"
+python-dotenv = "^0.19.0"
 
 [tool.poetry.dev-dependencies]
 
