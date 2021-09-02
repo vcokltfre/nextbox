@@ -10,5 +10,10 @@ def is_admin():
     async def predicate(ctx: Context) -> bool:
         if not ctx.guild: return False
 
-        return STAFF in ctx.author._roles  # type: ignore
+        if STAFF in ctx.author._roles:  # type: ignore
+            return True
+
+        await ctx.reply("You are not permitted to use this command.")
+
+        return False
     return check(predicate)
