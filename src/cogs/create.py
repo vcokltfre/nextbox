@@ -61,6 +61,8 @@ class Create(Cog):
     async def new(self, ctx: Context) -> None:
         """Create a new server."""
 
+        msg = await ctx.reply(f"{getenv('LOADING')} Spinning up a new server, this will take a few seconds...",allowed_mentions=AllowedMentions(replied_user=False))
+
         guild, channel, role = await generate_default(ctx.bot, ctx)
         view = SettingsView(ctx.author.id, role, guild)
 
@@ -80,7 +82,7 @@ class Create(Cog):
 
         await ctx.author.send(f"Sandbox created! {invite.url}")
 
-        await ctx.reply("A sandbox guild has been created and the invite sent to your DMs.", allowed_mentions=AllowedMentions(replied_user=False))
+        await msg.edit(content="A sandbox guild has been created and the invite sent to your DMs.")
 
 
 def setup(bot: Bot) -> None:
