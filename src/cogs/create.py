@@ -1,4 +1,5 @@
 from asyncio import sleep
+from os import getenv
 
 from nextcord import Embed, ButtonStyle, Interaction, Button, Role, Guild, Member, AllowedMentions
 from nextcord.ext.commands import Bot, Cog, Context, command
@@ -42,6 +43,11 @@ class SettingsView(View):
         await sleep(3)
 
         await self.guild.delete()
+
+    @button(label="Invite Test Bot", style=ButtonStyle.blurple, row=1)  # type: ignore
+    async def invite_test_bot(self, _button: Button, interaction: Interaction) -> None:
+
+        await interaction.response.send_message(f"Here: {getenv('TEST_INVITE')}", ephemeral=True)
 
 
 class Create(Cog):
