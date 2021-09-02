@@ -1,7 +1,7 @@
 from os import environ
 
 from dotenv import load_dotenv
-from nextcord import Intents
+from nextcord import Game, Intents
 from nextcord.ext.commands import Bot
 
 
@@ -15,6 +15,7 @@ def main() -> None:
         command_prefix="::",
         help_command=None,
         intents=intents,
+        activity=Game("in my sandbox."),
     )
 
     bot.load_extension("src.cogs.create")
