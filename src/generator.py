@@ -4,8 +4,12 @@ from nextcord import TextChannel, Permissions, Role, Guild
 from nextcord.ext.commands import Bot, Context
 
 
+with open("nextbox.png", "rb") as f:
+    ICON = f.read()
+
+
 async def generate_default(bot: Bot, ctx: Context) -> Tuple[Guild, TextChannel, Role]:
-    guild = await bot.create_guild(name="NextBox Sandbox", code="q7RRmVrncqvv")
+    guild = await bot.create_guild(name="NextBox Sandbox", code="q7RRmVrncqvv", icon=ICON)
 
     print(guild.channels)
 
