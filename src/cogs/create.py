@@ -47,7 +47,7 @@ class SettingsView(View):
     @button(label="Invite Test Bot", style=ButtonStyle.blurple, row=1)  # type: ignore
     async def invite_test_bot(self, _button: Button, interaction: Interaction) -> None:
 
-        await interaction.response.send_message(f"Here: {getenv('TEST_INVITE')}", ephemeral=True)
+        await interaction.response.send_message(f"Here: {getenv('TEST_INVITE')}&guild_id={self.guild.id}", ephemeral=True)
 
 
 class Create(Cog):
