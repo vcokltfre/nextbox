@@ -11,8 +11,8 @@ class Cleanup(Cog):
 
     @command(name="cleanup")
     @is_admin()
-    async def new(self, ctx: Context) -> None:
-        """Create a new server."""
+    async def delete(self, ctx: Context) -> None:
+        """Delete all sandbox servers."""
 
         to_delete = []
 
