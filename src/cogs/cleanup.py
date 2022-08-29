@@ -9,10 +9,10 @@ class Cleanup(Cog):
     def __init__(self, bot: Bot) -> None:
         self.bot = bot
 
-    @command(name="cleanup")
+    @command()
     @is_admin()
-    async def new(self, ctx: Context) -> None:
-        """Create a new server."""
+    async def cleanup(self, ctx: Context) -> None:
+        """Delete all sandbox servers."""
 
         to_delete = []
 
